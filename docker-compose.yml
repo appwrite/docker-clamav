@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  clamav:
+    build: .
+    restart: unless-stopped
+    ports:
+    - "3310:3310"
