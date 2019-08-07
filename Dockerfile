@@ -1,9 +1,10 @@
 FROM ubuntu:18.04
-MAINTAINER Appwrite Team <team@appwrite.io>
+
+LABEL maintainer="team@appwrite.io"
 
 RUN \
   apt-get update --fix-missing && \
-  apt-get install -y clamav clamav-daemon clamav-freshclam wget && \
+  apt-get install -y clamav clamav-daemon clamav-freshclam wget net-tools && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
