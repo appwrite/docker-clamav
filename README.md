@@ -21,7 +21,7 @@ In order to run this container you'll need docker installed.
 ### Usage
 
 ```shell
-docker run appwrite/clamav:v1.0.2
+docker run appwrite/clamav
 ```
 
 #### Environment Variables
