@@ -3,8 +3,8 @@ FROM ubuntu:18.04
 LABEL maintainer="team@appwrite.io"
 
 RUN \
-  apt-get update --fix-missing && \
-  apt-get install -y clamav clamav-daemon clamav-freshclam wget net-tools && \
+  apt-get update && \
+  apt-get install -y --no-install-recommends --no-install-suggests clamav clamav-daemon clamav-freshclam wget net-tools && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
@@ -20,6 +20,8 @@ RUN mkdir /var/run/clamav && \
 RUN sed -i 's/^Foreground .*$/Foreground true/g' /etc/clamav/clamd.conf && \
     echo "TCPSocket 3310" >> /etc/clamav/clamd.conf && \
     sed -i 's/^Foreground .*$/Foreground true/g' /etc/clamav/freshclam.conf
+
+RUN ln -sf /dev/stdout /var/log/clamav/clamav.log
 
 VOLUME ["/var/lib/clamav"]
 
