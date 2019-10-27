@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/appwrite/php-clamav.svg?branch=master)](https://travis-ci.org/appwrite/php-clamav)
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/clamav.svg)
-[![Chat With Us](https://img.shields.io/gitter/room/appwrite/community.svg)](https://gitter.im/appwrite/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
 
 A ClamAV docker container with auto database updates by the [Appwrite team](https://appwrite.io). Use this container and a compilable client library to connect to the ClamAV using a TCP connection.
 
