@@ -4,7 +4,7 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/clamav.svg)
 [![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
 
-A ClamAV docker container with auto database updates by the [Appwrite team](https://appwrite.io). Use this container and a compilable client library to connect to the ClamAV using a TCP connection.
+A ClamAV docker container with auto database updates by the [Appwrite team](https://github.com/appwrite). Use this container and a compilable client library to connect to the ClamAV using a TCP connection.
 
 ## Getting Started
 
