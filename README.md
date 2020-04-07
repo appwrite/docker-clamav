@@ -4,15 +4,15 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/clamav.svg)
 [![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
 
-A ClamAV docker container with auto database updates by the [Appwrite team](https://github.com/appwrite). Use this container and a compilable client library to connect to the ClamAV using a TCP connection.
+A ClamAV docker image with auto database updates by the [Appwrite team](https://github.com/appwrite). Use this image and a compilable client library to connect to the ClamAV using a TCP connection.
 
 ## Getting Started
 
-These instructions will cover usage information to help your run ClamAV docker container 
+These instructions will cover usage information to help your run ClamAV docker image 
 
 ### Prerequisities
 
-In order to run this container you'll need docker installed.
+In order to run this image you'll need docker installed.
 
 * [Windows](https://docs.docker.com/windows/started)
 * [OS X](https://docs.docker.com/mac/started/)
@@ -26,11 +26,11 @@ docker run appwrite/clamav
 
 #### Environment Variables
 
-This container has no environment variables. 
+This image has no environment variables. 
 
 #### Volumes
 
-You can mount any volume you need to allow the container to scan its files. 
+You can mount any volume you need to allow the image to scan its files. 
 
 ## Find Us
 
