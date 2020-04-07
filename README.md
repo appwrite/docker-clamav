@@ -1,8 +1,8 @@
 # Docker ClamAV
 
 [![Build Status](https://travis-ci.org/appwrite/php-clamav.svg?branch=master)](https://travis-ci.org/appwrite/php-clamav)
-![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/clamav.svg)
-[![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
+[![Discord](https://badgen.net/badge/discord/chat/green)](https://discord.gg/GSeTUeA)
+[![Docker Pulls](https://badgen.net/docker/pulls/appwrite/clamav)](https://travis-ci.org/appwrite/clamav)
 
 A ClamAV docker image with auto database updates by the [Appwrite team](https://github.com/appwrite). Use this image and a compilable client library to connect to the ClamAV using a TCP connection.
 
@@ -35,7 +35,7 @@ You can mount any volume you need to allow the image to scan its files.
 ## Find Us
 
 * [GitHub](https://github.com/appwrite)
-* [Gitter](https://gitter.im/utopia-php/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+* [Discord](https://discord.gg/GSeTUeA)
 * [Twitter](https://twitter.com/appwrite_io)
 
 ## Authors
