@@ -32,6 +32,16 @@ This image has no environment variables.
 
 You can mount any volume you need to allow the image to scan its files. 
 
+### Build
+
+```
+docker build --tag appwrite/clamav:0.0.0 .
+```
+
+``
+docker push appwrite/clamav:0.0.0
+``
+
 ## Find Us
 
 * [GitHub](https://github.com/appwrite)

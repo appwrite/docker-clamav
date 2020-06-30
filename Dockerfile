@@ -2,9 +2,11 @@ FROM ubuntu:18.04
 
 LABEL maintainer="team@appwrite.io"
 
+VOLUME ["/var/lib/clamav"]
+
 RUN \
   apt-get update && \
-  apt-get install -y --no-install-recommends --no-install-suggests clamav clamav-daemon clamav-freshclam wget net-tools && \
+  apt-get install -y --no-install-recommends --no-install-suggests ca-certificates clamav clamav-daemon clamav-freshclam wget net-tools && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
