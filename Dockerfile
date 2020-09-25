@@ -1,31 +1,25 @@
-FROM ubuntu:18.04
+FROM alpine:3
 
 LABEL maintainer="team@appwrite.io"
 
-VOLUME ["/var/lib/clamav"]
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
-  apt-get update && \
-  apt-get install -y --no-install-recommends --no-install-suggests ca-certificates clamav clamav-daemon clamav-freshclam wget net-tools && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/*
+    apk add --no-cache \
+        bash \
+        clamav-libunrar \
+        clamav \
+        rsyslog \
+        wget
 
-RUN wget -O /var/lib/clamav/main.cvd http://database.clamav.net/main.cvd && \
-  wget -O /var/lib/clamav/daily.cvd http://database.clamav.net/daily.cvd && \
-  wget -O /var/lib/clamav/bytecode.cvd http://database.clamav.net/bytecode.cvd && \
-  chown clamav:clamav /var/lib/clamav/*.cvd
+VOLUME ["/clamav"]
 
-RUN mkdir /var/run/clamav && \
-    chown clamav:clamav /var/run/clamav && \
-    chmod 750 /var/run/clamav
+EXPOSE 3310/tcp
 
-RUN sed -i 's/^Foreground .*$/Foreground true/g' /etc/clamav/clamd.conf && \
-    echo "TCPSocket 3310" >> /etc/clamav/clamd.conf && \
-    sed -i 's/^Foreground .*$/Foreground true/g' /etc/clamav/freshclam.conf
+COPY conf /etc/clamav
+COPY entrypoint.sh /start.sh
+COPY health.sh /health.sh
 
-EXPOSE 3310
+CMD ["/start.sh"]
 
-ADD entrypoint.sh /
-RUN chmod 775 /entrypoint.sh
-
-CMD ["/bin/bash", "/entrypoint.sh"]
+HEALTHCHECK --start-period=350s CMD /health.sh
