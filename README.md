@@ -57,4 +57,4 @@ docker push appwrite/clamav:0.0.0
 
 ## Copyright and license
 
-The MIT License (MIT) [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
+[![NPM](https://img.shields.io/npm/l/react-otp-input)](https://github.com/devfolioco/react-otp-input/blob/master/LICENSE)(http://www.opensource.org/licenses/mit-license.php)
