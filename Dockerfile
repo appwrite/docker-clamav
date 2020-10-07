@@ -4,6 +4,11 @@ LABEL maintainer="team@appwrite.io"
 
 VOLUME ["/var/lib/clamav"]
 
+RUN groupadd -g 999 clamav && \
+    useradd -r -u 999 -g clamav clamav
+
+USER clamav
+
 RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends --no-install-suggests ca-certificates clamav clamav-daemon clamav-freshclam wget net-tools && \
