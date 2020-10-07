@@ -1,3 +1,4 @@
+---
 notifications:
   email:
   - team@appwrite.io
@@ -10,7 +11,7 @@ install:
 - sleep 30
 
 script:
-- docker ps
+- docker ps -a
 - docker-compose logs clamav
 - >
   if : >/dev/tcp/localhost/3310; then
