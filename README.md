@@ -1,7 +1,7 @@
 # Docker ClamAV
 
 [![Build Status](https://travis-ci.com/appwrite/docker-clamav.svg?branch=master)](https://travis-ci.com/appwrite/docker-clamav)
-[![Discord](https://badgen.net/badge/discord/chat/green)](https://discord.gg/GSeTUeA)
+[![Discord](https://img.shields.io/discord/564160730845151244?label=discord)](https://discord.gg/GSeTUeA)
 [![Docker Pulls](https://badgen.net/docker/pulls/appwrite/clamav)](https://travis-ci.org/appwrite/clamav)
 
 A ClamAV docker image with auto database updates by the [Appwrite team](https://github.com/appwrite). Use this image and a compilable client library to connect to the ClamAV using a TCP connection.
