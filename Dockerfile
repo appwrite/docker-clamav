@@ -2,8 +2,6 @@ FROM ubuntu:18.04
 
 LABEL maintainer="team@appwrite.io"
 
-VOLUME ["/var/lib/clamav"]
-
 RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends --no-install-suggests ca-certificates clamav clamav-daemon clamav-freshclam wget net-tools && \
@@ -28,7 +26,6 @@ RUN sed -i 's/^Foreground .*$/Foreground true/g' /etc/clamav/clamd.conf && \
 EXPOSE 3310
 
 ADD entrypoint.sh /
-
 RUN chmod 775 /entrypoint.sh
 
 HEALTHCHECK CMD netstat -an | grep 3310 > /dev/null; if [ 0 != $? ]; then exit 1; fi;

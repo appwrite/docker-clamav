@@ -6,3 +6,5 @@ services:
     restart: unless-stopped
     ports:
     - "3310:3310"
+    volumes: 
+    - .data:/var/lib/clamav:rw
