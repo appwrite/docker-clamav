@@ -48,4 +48,3 @@ wait -n
 
 # return received result
 exit $latest_exit
-© 2020 GitHub, Inc.
