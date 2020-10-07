@@ -1,0 +1,22 @@
+notifications:
+  email:
+  - team@appwrite.io
+  
+services:
+- docker
+
+install:
+- docker-compose up -d
+- sleep 10
+
+script:
+- docker ps
+- docker-compose logs clamav
+- >
+  if : >/dev/tcp/localhost/3310; then
+    echo 'Connection available.'
+    exit 0
+  else
+    echo 'Connection unavailable.'
+    exit 1
+  fi
