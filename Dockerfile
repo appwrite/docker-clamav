@@ -10,6 +10,8 @@ RUN \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
+RUN chown -Rf clamav:clamav /var/lib/clamav && chmod -Rf 0755 /var/lib/clamav
+
 RUN wget -O /var/lib/clamav/main.cvd http://database.clamav.net/main.cvd && \
   wget -O /var/lib/clamav/daily.cvd http://database.clamav.net/daily.cvd && \
   wget -O /var/lib/clamav/bytecode.cvd http://database.clamav.net/bytecode.cvd && \
