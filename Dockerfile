@@ -10,13 +10,12 @@ RUN \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
-RUN chown -Rf clamav:clamav /var/lib/clamav && chmod -Rf 0755 /var/lib/clamav
+RUN chown -Rf clam:clam /var/lib/clamav && chmod -Rf 0755 /var/lib/clamav
 
 RUN wget -O /var/lib/clamav/main.cvd http://database.clamav.net/main.cvd && \
   wget -O /var/lib/clamav/daily.cvd http://database.clamav.net/daily.cvd && \
-  wget -O /var/lib/clamav/bytecode.cvd http://database.clamav.net/bytecode.cvd && \
-  chown clamav:clamav /var/lib/clamav/*.cvd
-
+  wget -O /var/lib/clamav/bytecode.cvd http://database.clamav.net/bytecode.cvd
+  
 RUN mkdir /var/run/clamav && \
     chown clamav:clamav /var/run/clamav && \
     chmod 750 /var/run/clamav
@@ -30,8 +29,6 @@ EXPOSE 3310
 ADD entrypoint.sh /
 
 RUN chmod 775 /entrypoint.sh
-
-USER clamav
 
 HEALTHCHECK CMD netstat -an | grep 3310 > /dev/null; if [ 0 != $? ]; then exit 1; fi;
 
