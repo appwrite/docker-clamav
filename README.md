@@ -1,6 +1,6 @@
 # Docker ClamAV
 
-[![Build Status](https://travis-ci.org/appwrite/php-clamav.svg?branch=master)](https://travis-ci.org/appwrite/php-clamav)
+[![Build Status](https://travis-ci.com/appwrite/docker-clamav.svg?branch=master)](https://travis-ci.com/appwrite/docker-clamav)
 [![Discord](https://badgen.net/badge/discord/chat/green)](https://discord.gg/GSeTUeA)
 [![Docker Pulls](https://badgen.net/docker/pulls/appwrite/clamav)](https://travis-ci.org/appwrite/clamav)
 
