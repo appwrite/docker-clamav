@@ -31,9 +31,6 @@ ADD entrypoint.sh /
 
 RUN chmod 775 /entrypoint.sh
 
-RUN groupadd -g 999 clamav && \
-    useradd -r -u 999 -g clamav clamav
-
 USER clamav
 
 HEALTHCHECK CMD netstat -an | grep 3310 > /dev/null; if [ 0 != $? ]; then exit 1; fi;
