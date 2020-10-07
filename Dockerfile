@@ -12,7 +12,7 @@ RUN \
         rsyslog \
         wget
 
-VOLUME ["/clamav"]
+VOLUME ["/clamav"
 
 EXPOSE 3310/tcp
 
