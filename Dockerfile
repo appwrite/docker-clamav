@@ -23,11 +23,11 @@ RUN sed -i 's/^Foreground .*$/Foreground true/g' /etc/clamav/clamd.conf && \
     echo "TCPSocket 3310" >> /etc/clamav/clamd.conf && \
     sed -i 's/^Foreground .*$/Foreground true/g' /etc/clamav/freshclam.conf
 
-VOLUME ["/var/lib/clamav"]
-
 EXPOSE 3310
 
 ADD entrypoint.sh /
 RUN chmod 775 /entrypoint.sh
+
+HEALTHCHECK CMD netstat -an | grep 3310 > /dev/null; if [ 0 != $? ]; then exit 1; fi;
 
 CMD ["/bin/bash", "/entrypoint.sh"]
