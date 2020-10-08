@@ -23,6 +23,7 @@ install:
   - docker-compose up -d
 
 script:
+  - sleep 10
   - docker ps -a
   - docker-compose logs clamav
   - >
