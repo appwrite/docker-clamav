@@ -32,20 +32,19 @@ This image has no environment variables.
 
 You can mount any volume you need to allow the image to scan its files. 
 
-### Build
+### Build / Release
 
 ```
 docker build --tag appwrite/clamav:0.0.0 .
-```
-
-Multi-arch build (expiremntal):
-```
-docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/386,linux/ppc64le --tag appwrite/clamav:0.0.0 .
-```
-
-``
 docker push appwrite/clamav:0.0.0
-``
+```
+
+Multi-arch build (experimental using [buildx](https://github.com/docker/buildx)):
+
+```
+docker buildx create --use
+docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/386,linux/ppc64le --tag appwrite/clamav:0.0.0 --push .
+```
 
 ## Find Us
 
