@@ -2,22 +2,31 @@
 notifications:
   email:
   - team@appwrite.io
-  
+
+dist: trusty
+
 services:
-- docker
+  - docker
+  
+matrix:
+  include:
+    - env: DOCKER_ARCH=amd64
+    - env: DOCKER_ARCH=arm
+    - env: DOCKER_ARCH=aarch64
 
 install:
-- docker-compose up -d
-- sleep 30
+  - docker build -f Dockerfile.$DOCKER_ARCH -t appwrite/clamav:$DOCKER_ARCH .
+  - docker run -d -p 3310:3310 appwrite/clamav:$DOCKER_ARCH
+  - sleep 30
 
 script:
-- docker ps -a
-- docker-compose logs clamav
-- >
-  if : >/dev/tcp/localhost/3310; then
-    echo 'Connection available.'
-    exit 0
-  else
-    echo 'Connection unavailable.'
-    exit 1
-  fi
+  - docker ps -a
+  - docker-compose logs clamav
+  - >
+    if : >/dev/tcp/localhost/3310; then
+      echo 'Connection available.'
+      exit 0
+    else
+      echo 'Connection unavailable.'
+      exit 1
+    fi
