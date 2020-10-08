@@ -2,8 +2,6 @@ FROM alpine:3.12
 
 LABEL maintainer="team@appwrite.io"
 
-ENV DEBIAN_FRONTEND noninteractive
-
 RUN \
     apk add --no-cache \
         bash \
