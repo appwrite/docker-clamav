@@ -8,7 +8,6 @@ language: minimal
 arch:
   - amd64
   - arm64
-  - ppc64le
 
 os: linux
 
