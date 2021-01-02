@@ -1,8 +1,10 @@
 # Docker ClamAV
 
-[![Build Status](https://travis-ci.com/appwrite/docker-clamav.svg?branch=master)](https://travis-ci.com/appwrite/docker-clamav)
-[![Discord](https://img.shields.io/discord/564160730845151244?label=discord)](https://discord.gg/GSeTUeA)
-[![Docker Pulls](https://badgen.net/docker/pulls/appwrite/clamav)](https://travis-ci.org/appwrite/clamav)
+[![Discord](https://img.shields.io/discord/564160730845151244?label=discord&style=flat-square)](https://appwrite.io/discord)
+[![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/clamav?color=f02e65&style=flat-square)](https://hub.docker.com/r/appwrite/clamav)
+[![Build Status](https://img.shields.io/travis/com/appwrite/docker-clamav?style=flat-square)](https://travis-ci.com/appwrite/docker-clamav)
+[![Twitter Account](https://img.shields.io/twitter/follow/appwrite_io?color=00acee&label=twitter&style=flat-square)](https://twitter.com/appwrite_io)
+[![Follow Appwrite on StackShare](https://img.shields.io/badge/follow%20on-stackshare-blue?style=flat-square)](https://stackshare.io/appwrite)
 
 A ClamAV docker image with auto database updates by the [Appwrite team](https://github.com/appwrite). Use this image and a compilable client library to connect to the ClamAV using a TCP connection.
 
@@ -49,15 +51,8 @@ docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
 ## Find Us
 
 * [GitHub](https://github.com/appwrite)
-* [Discord](https://discord.gg/GSeTUeA)
+* [Discord](https://appwrite.io/discord)
 * [Twitter](https://twitter.com/appwrite_io)
-
-## Authors
-
-**Eldad Fux**
-
-+ [https://twitter.com/eldadfux](https://twitter.com/eldadfux)
-+ [https://github.com/eldadfux](https://github.com/eldadfux)
 
 ## Copyright and license
 
