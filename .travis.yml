@@ -44,6 +44,6 @@ script:
 deploy:
   - provider: script
     edge: true
-    script: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x -t appwrite/mariadb:$TRAVIS_TAG ./ --push
+    script: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x -t appwrite/clamav:$TRAVIS_TAG ./ --push
     on:
       tags: true
