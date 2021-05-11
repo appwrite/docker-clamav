@@ -17,6 +17,13 @@ before_install:
   - mkdir -p $HOME/.docker
   - echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
   - sudo service docker start
+  - >
+    if [ ! -z "${DOCKERHUB_PULL_USERNAME:-}" ]; then
+      echo "${DOCKERHUB_PULL_PASSWORD}" | docker login --username "${DOCKERHUB_PULL_USERNAME}" --password-stdin
+    fi
+  - docker --version
+  - docker run --rm --privileged linuxkit/binfmt:v0.8
+  - docker buildx create --use
 
 install:
   - docker-compose up -d
@@ -33,3 +40,10 @@ script:
       echo 'Connection unavailable.'
       travis_terminate 1
     fi
+
+deploy:
+  - provider: script
+    edge: true
+    script: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x -t appwrite/mariadb:$TRAVIS_TAG ./ --push
+    on:
+      tags: true
