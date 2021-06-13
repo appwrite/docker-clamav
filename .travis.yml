@@ -22,8 +22,6 @@ before_install:
       echo "${DOCKERHUB_PULL_PASSWORD}" | docker login --username "${DOCKERHUB_PULL_USERNAME}" --password-stdin
     fi
   - docker --version
-  - docker run --rm --privileged linuxkit/binfmt:v0.8
-  - docker buildx create --use
 
 install:
   - docker-compose up -d
@@ -44,7 +42,9 @@ script:
 deploy:
   - provider: script
     edge: true
-    script: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x -t appwrite/clamav:$TRAVIS_TAG ./ --push
+    script: docker run --rm --privileged linuxkit/binfmt:v0.8 &&
+      docker buildx create --use &&
+      docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x -t appwrite/clamav:$TRAVIS_TAG ./ --push
     on:
       tags: true
       condition: $TRAVIS_CPU_ARCH = amd64
