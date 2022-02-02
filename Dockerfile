@@ -3,6 +3,8 @@ FROM alpine:3.14
 LABEL maintainer="team@appwrite.io"
 
 RUN \
+    apk update && \
+    apk upgrade --available && \
     apk add --no-cache \
         bash \
         clamav-libunrar \
