@@ -1,9 +1,13 @@
 ---
-version: '3'
-
+version: '3.7'
 services:
   clamav:
     build: .
     restart: unless-stopped
     ports:
-    - "3310:3310"
+      - "3310:3310"
+    volumes:
+      - data:/clamav
+volumes:
+  data:
+    driver: local      
