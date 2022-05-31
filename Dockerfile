@@ -7,8 +7,8 @@ RUN \
     apk upgrade --available && \
     apk add --no-cache \
         bash \
-        clamav-libunrar \
-        clamav \
+        clamav-libunrar=0.104.3-r0 \
+        clamav=0.104.3-r0 \
         rsyslog \
         wget && \
     rm -rf /var/cache/apk/*
