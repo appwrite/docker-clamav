@@ -7,10 +7,10 @@ RUN \
     apk upgrade --available && \
     apk add --no-cache \
         bash=5.1.16-r2 \
-        clamav-libunrar=0.104.4-r1 \
-        clamav=0.104.4-r1 \
-        rsyslog=8.2206.0-r0 \
-        wget=1.21.3-r1 && \
+        clamav-libunrar=0.104.3-r0 \
+        clamav=0.104.3-r0 \
+        rsyslog=8.2204.1-r0 \
+        wget=1.21.3-r0 && \
     rm -rf /var/cache/apk/*
 
 VOLUME ["/clamav"]
