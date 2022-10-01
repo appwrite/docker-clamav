@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.16
 
 LABEL maintainer="team@appwrite.io"
 
@@ -6,11 +6,11 @@ RUN \
     apk update && \
     apk upgrade --available && \
     apk add --no-cache \
-        bash \
-        clamav-libunrar \
-        clamav \
-        rsyslog \
-        wget && \
+        bash=5.1.16-r2 \
+        clamav-libunrar=0.104.4-r1 \
+        clamav=0.104.4-r1 \
+        rsyslog=8.2206.0-r0 \
+        wget=1.21.3-r1 && \
     rm -rf /var/cache/apk/*
 
 VOLUME ["/clamav"]
