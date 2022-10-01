@@ -10,7 +10,6 @@ arch:
   - arm64
 
 os: linux
-dist: jammy
 
 before_install:
   - curl -fsSL https://get.docker.com | sh
