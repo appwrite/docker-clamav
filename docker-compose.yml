@@ -1,13 +1,29 @@
 ---
 version: '3.7'
+
 services:
-  clamav:
+  freshclam:
     build: .
-    restart: unless-stopped
+    environment:
+      MODE: freshclam
+    volumes:
+    - conf:/etc/clamav
+    - data:/var/lib/clamav
+
+  clamav:
+    depends_on:
+      - freshclam
+    build: .
+    environment:
+      MODE: clamd
+    ulimits:
+      stack: 1048576
+    volumes:
+      - conf:/etc/clamav
+      - data:/var/lib/clamav
     ports:
       - "3310:3310"
-    volumes:
-      - data:/clamav
+
 volumes:
+  conf:
   data:
-    driver: local      
