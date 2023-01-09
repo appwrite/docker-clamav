@@ -6,7 +6,7 @@
 [![Twitter Account](https://img.shields.io/twitter/follow/appwrite_io?color=00acee&label=twitter&style=flat-square)](https://twitter.com/appwrite_io)
 [![Follow Appwrite on StackShare](https://img.shields.io/badge/follow%20on-stackshare-blue?style=flat-square)](https://stackshare.io/appwrite)
 
-A ClamAV docker image with auto database updates by the [Appwrite team](https://github.com/appwrite). Use this image and a compilable client library to connect to the ClamAV using a TCP connection.
+A ClamAV docker image with auto database updates by the [Appwrite team](https://github.com/appwrite). Use this image and a compatible client library to connect to the ClamAV using a TCP connection.
 
 ## Getting Started
 
