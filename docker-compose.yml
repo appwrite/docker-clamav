@@ -1,26 +1,27 @@
----
-version: '3.7'
+version: "3.8"
 
 services:
-  freshclam:
+  base:
     build: .
+    volumes:
+      - conf:/etc/clamav
+      - data:/var/lib/clamav
+
+  freshclam:
+    extends:
+      service: base
     environment:
       MODE: freshclam
-    volumes:
-    - conf:/etc/clamav
-    - data:/var/lib/clamav
 
   clamav:
+    extends:
+      service: base
     depends_on:
       - freshclam
-    build: .
     environment:
       MODE: clamd
     ulimits:
       stack: 1048576
-    volumes:
-      - conf:/etc/clamav
-      - data:/var/lib/clamav
     ports:
       - "3310:3310"
 

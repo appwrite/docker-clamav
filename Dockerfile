@@ -1,17 +1,15 @@
-FROM alpine:3.16
+FROM alpine:3.18
 
 LABEL maintainer="team@appwrite.io"
 
-RUN apk add --no-cache \
-        clamav=0.104.3-r0 \
-        su-exec=0.2-r1 \
+RUN apk add --no-cache clamav=1.1.2-r0 su-exec=0.2-r3 && \
     rm -rf /var/cache/apk/* && \
-    install -d -o clamav -g clamav -m 700 /run/clamav; \
-	sed -i 's/^#\(Foreground\)/\1/' /etc/clamav/freshclam.conf; \
-	sed -i 's/^#\(Foreground \).*/\1yes/' /etc/clamav/clamd.conf; \
-	sed -i 's/^#\(TCPSocket \)/\1/' /etc/clamav/clamd.conf; \
-    sed -i 's/^#\(CompressLocalDatabase \).*/\1yes/' /etc/clamav/freshclam.conf; \
-	tar -cvjf /etc/_clamav.tar.bz2 etc/clamav
+    install -d -o clamav -g clamav -m 700 /run/clamav && \
+    sed -i 's/^#\(Foreground\)/\1/' /etc/clamav/freshclam.conf && \
+    sed -i 's/^#\(Foreground \).*/\1yes/' /etc/clamav/clamd.conf && \
+    sed -i 's/^#\(TCPSocket \)/\1/' /etc/clamav/clamd.conf && \
+    sed -i 's/^#\(CompressLocalDatabase \).*/\1yes/' /etc/clamav/freshclam.conf && \
+    tar -cvjf /etc/_clamav.tar.bz2 etc/clamav
 
 COPY entrypoint.sh /start.sh
 COPY health.sh /health.sh

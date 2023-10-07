@@ -10,15 +10,15 @@ A ClamAV docker image with auto database updates by the [Appwrite team](https://
 
 ## Getting Started
 
-These instructions will cover usage information to help your run ClamAV docker image 
+These instructions will cover usage information to help your run ClamAV docker image
 
-### Prerequisities
+### Prerequisites
 
 In order to run this image you'll need docker installed.
 
-* [Windows](https://docs.docker.com/windows/started)
-* [OS X](https://docs.docker.com/mac/started/)
-* [Linux](https://docs.docker.com/linux/started/)
+- [Windows](https://docs.docker.com/windows/started)
+- [OS X](https://docs.docker.com/mac/started/)
+- [Linux](https://docs.docker.com/linux/started/)
 
 ### Usage
 
@@ -28,11 +28,11 @@ docker run appwrite/clamav
 
 #### Environment Variables
 
-This image has no environment variables. 
+This image has no environment variables.
 
 #### Volumes
 
-You can mount any volume you need to allow the image to scan its files. 
+You can mount any volume you need to allow the image to scan its files.
 
 ### Build / Release
 
@@ -50,9 +50,9 @@ docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
 
 ## Find Us
 
-* [GitHub](https://github.com/appwrite)
-* [Discord](https://appwrite.io/discord)
-* [Twitter](https://twitter.com/appwrite_io)
+- [GitHub](https://github.com/appwrite)
+- [Discord](https://appwrite.io/discord)
+- [Twitter](https://twitter.com/appwrite_io)
 
 ## Copyright and license
 
