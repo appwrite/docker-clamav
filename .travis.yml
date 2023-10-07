@@ -1,4 +1,3 @@
----
 notifications:
   email:
     - team@appwrite.io
@@ -10,7 +9,7 @@ arch:
   - arm64
 
 os: linux
-dist: focal
+dist: jammy
 
 before_install:
   - curl -fsSL https://get.docker.com | sh
