@@ -52,7 +52,7 @@ docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
 
 * [GitHub](https://github.com/appwrite)
 * [Discord](https://appwrite.io/discord)
-* [Twitter](https://twitter.com/appwrite_io)
+* [X](https://x.com/appwrite)
 
 ## Copyright and license
 
